@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 dark:text-white;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .link-hover {
+    @apply relative overflow-hidden;
+  }
+
+  .link-hover::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300;
+  }
+
+  .link-hover:hover::after {
+    @apply w-full;
+  }
+
+  .magnetic-button {
+    @apply relative transition-transform duration-100;
+  }
+}
+
+@layer utilities {
+  /* Keep existing animations */
+  /* (Keep all existing utilities) */
+}
