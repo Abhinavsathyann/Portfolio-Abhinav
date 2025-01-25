@@ -493,6 +493,22 @@ const certificates = [
     description: "Specialized certification in advanced React patterns and practices",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
     link: "#"
+  },
+  {
+    title: "Internship Completion Certificate – CodeSoft",
+    issuer: "CodeSoft",
+    date: "2024",
+    description: "Completed a 1-month internship in Web Development, gaining hands-on experience in building and optimizing web applications.",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
+    link: "#"
+  },
+  {
+    title: "Internship Completion Certificate – OIB",
+    issuer: "Oasis Infobyt",
+    date: "2024",
+    description: "Completed a 1-month internship in Web Development & Designing, focusing on front-end development, UI/UX enhancements, and responsive web design.",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
+    link: "#"
   }
 ];
 
