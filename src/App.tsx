@@ -465,7 +465,7 @@ const certificates = [
   {
     title: "AWS Solutions Architect Professional",
     issuer: "Amazon Web Services",
-    date: "2023",
+    date: "2024",
     description: "Advanced certification for designing distributed systems on AWS",
     image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80",
     link: "#"
@@ -473,7 +473,7 @@ const certificates = [
   {
     title: "Google Cloud Professional Developer",
     issuer: "Google",
-    date: "2022",
+    date: "2024",
     description: "Expert-level certification for cloud application development",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
     link: "#"
@@ -481,7 +481,7 @@ const certificates = [
   {
     title: "Microsoft Azure Expert",
     issuer: "Microsoft",
-    date: "2022",
+    date: "2024",
     description: "Advanced certification for Azure cloud solutions",
     image: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80",
     link: "#"
@@ -489,7 +489,7 @@ const certificates = [
   {
     title: "Advanced React Development",
     issuer: "Meta",
-    date: "2021",
+    date: "2024",
     description: "Specialized certification in advanced React patterns and practices",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
     link: "#"
@@ -507,6 +507,38 @@ const certificates = [
     issuer: "Oasis Infobyt",
     date: "2024",
     description: "Completed a 1-month internship in Web Development & Designing, focusing on front-end development, UI/UX enhancements, and responsive web design.",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
+    link: "#"
+  },
+  {
+    title: "Internship Completion Certificate – Keltron",
+    issuer: "Keltron",
+    date: "2024",
+    description: "Completed a 1-month internship in Artificial Intelligence and Machine Learning, gaining hands-on experience in AI models, data analysis, and machine learning algorithms using Python.",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
+    link: "#"
+  },
+  {
+    title: "Certificate of Completion – RedTeam Hacker Academy",
+    issuer: "Oasis Infobyt",
+    date: "2024",
+    description: "Completed a 1-month internship in Web Development & Designing, focusing on front-end development, UI/UX enhancements, and responsive web design.",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
+    link: "#"
+  },
+  {
+    title: "Certificate of Completion – Creators of Metaverse Program",
+    issuer: "Meta",
+    date: "2023",
+    description: "Successfully completed a 2-day workshop in Phase 1 of the Creators of Metaverse Program in partnership with AICTE, supported by Meta Platforms Inc., and managed by 1M1B. The program focused on exploring metaverse technologies, immersive experiences, and future digital innovations.",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
+    link: "#"
+  },
+  {
+    title: "Certificate of Participation – Creators of Metaverse Student Program",
+    issuer: "Meta",
+    date: "2024",
+    description: "Presented for successfully participating in Phase 2 of the Creators of Metaverse Student Program. This month-long Augmented Reality (AR) learning and workplace experience in the academic year 2023-24 focused on developing basic to advanced AR projects using Meta Spark Studio, inspiring the next generation of AR creators in India.",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
     link: "#"
   }
