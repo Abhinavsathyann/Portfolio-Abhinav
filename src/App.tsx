@@ -69,7 +69,7 @@ function App() {
       <nav className="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-40 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <a href="#home" className="text-2xl font-bold text-indigo-600 link-hover">JD</a>
+            <a href="#home" className="text-2xl font-bold text-indigo-600 link-hover">ABHINAV K</a>
             <div className="flex items-center gap-8">
               <div className="hidden md:flex gap-6">
                 {['home', 'about', 'experience', 'achievements', 'certificates', 'projects', 'contact'].map((section) => (
@@ -102,10 +102,10 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 text-center">
           <div className="animate-slide-up">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Hi, I'm <span className="text-indigo-600">John Doe</span>
+              Hi, I'm <span className="text-indigo-600">Abhinav</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              Full Stack Developer & Cloud Solutions Architect
+              Web Developer
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
@@ -140,16 +140,16 @@ function App() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
               <img
-                src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&q=80"
+                src={abhinavPhoto}
                 alt="Profile"
-                className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+                className="w-full h-[550px] object-cover rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-6 animate-slide-in-right">
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                With over 8 years of experience in software development, I specialize in building scalable web applications
-                and cloud solutions. My journey in tech has been driven by a passion for creating efficient, user-friendly
-                solutions that solve real-world problems.
+              I’m a passionate web developer focused on building scalable web applications and cloud solutions.
+               I love creating efficient, user-friendly digital experiences that solve real-world problems.
+                Constantly learning and exploring new technologies, I strive to write clean, optimized code that brings ideas to life
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -412,67 +412,48 @@ function App() {
 // Keep all existing constants
 const experiences = [
   {
-    role: "Senior Full Stack Developer",
-    company: "Tech Innovators Inc.",
-    period: "2020 - Present",
+    role: "Web Developer Intern", 
+    company: "Sperkerbox Media.",
+    period: "2024 - Present",
     achievements: [
-      "Led a team of 5 developers in building a cloud-based SaaS platform",
-      "Improved system performance by 40% through optimization",
-      "Implemented CI/CD pipeline reducing deployment time by 60%"
+      "Building and optimizing web applications.",
+      "Enhancing UI/UX, improving performance, and working with modern web technologies.",
+      "Gaining hands-on exposure to real-world projects and development workflows."
     ]
   },
-  {
-    role: "Full Stack Developer",
-    company: "Digital Solutions Ltd",
-    period: "2018 - 2020",
-    achievements: [
-      "Developed and maintained multiple client projects using React and Node.js",
-      "Reduced server costs by 30% through architecture optimization",
-      "Mentored 3 junior developers"
-    ]
-  },
-  {
-    role: "Frontend Developer",
-    company: "WebCraft Agency",
-    period: "2016 - 2018",
-    achievements: [
-      "Built responsive websites for 20+ clients",
-      "Implemented modern frontend practices improving load times by 50%",
-      "Received client satisfaction score of 4.9/5"
-    ]
-  }
+ 
 ];
 
 const achievements = [
   {
     icon: Trophy,
-    title: "Best Developer Award 2023",
-    description: "Recognized for outstanding contributions to open source projects and technical innovation"
+    title: "Participated in E-Summit 2025 at IIT Bombay",
+    description: "Engaged in networking, startup mentorship, and discussions on entrepreneurship and technology innovation."
   },
   {
     icon: Code,
-    title: "1M+ Lines of Code",
-    description: "Contributed over a million lines of code to various projects and platforms"
+    title: "Participated in Multiple Online Hackathons on Devfolio",
+    description: "Developed innovative projects, collaborated with global developers, and enhanced problem-solving skills in Web3 and software development."
   },
   {
     icon: GraduationCap,
-    title: "Technical Mentor",
-    description: "Mentored 50+ developers, conducting workshops and training sessions"
+    title: "Attended Numerous Certificates, Bootcamps, and Webinars",
+    description: "Gained hands-on experience and industry insights through various educational events, enhancing skills in web development, cloud technologies, and emerging trends."
   },
   {
     icon: Award,
-    title: "Innovation Champion",
-    description: "Led the development of 3 patent-pending technologies"
+    title: "Participated in Web3 Hackathon at NIT Calicut",
+    description: "Collaborated on blockchain-based solutions, gained hands-on experience with Web3 technologies, and engaged with industry experts and fellow developers."
   },
   {
     icon: Github,
-    title: "Open Source Contributor",
-    description: "Major contributor to popular open source projects with 1000+ stars"
+    title: "Active Contributor on GitHub",
+    description: "Engaging in open-source projects, collaborating with developers, and continuously improving code quality and functionality."
   },
   {
     icon: Trophy,
-    title: "Hackathon Winner",
-    description: "Won first place in 3 major hackathons for innovative solutions"
+    title: "Participated in E-Summit 2024 at NIT Calicut",
+    description: "Explored emerging startup trends, attended insightful sessions, and connected with industry experts and fellow entrepreneurs."
   }
 ];
 
