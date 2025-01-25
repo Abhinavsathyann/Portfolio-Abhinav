@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Code, Briefcase, User, Send, Moon, Sun } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Code, Briefcase, User, Send, Moon, Sun, Award, GraduationCap, Trophy } from 'lucide-react';
 import abhinavPhoto from '../src/assets/photo/AbhinavPhoto.jpg';
 import brandMusiq from '../src/assets/photo/BrandMusiq.png';
 import chat from '../src/assets/photo/Chat.png';
@@ -17,39 +17,15 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Magnetic button effect with smooth animation
-  const handleMagneticMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
-    const target = e.currentTarget;
-    const { left, top, width, height } = target.getBoundingClientRect();
-    const centerX = left + width / 2;
-    const centerY = top + height / 2;
-    const deltaX = Math.floor((e.clientX - centerX) * 0.3);
-    const deltaY = Math.floor((e.clientY - centerY) * 0.3);
-    
-    requestAnimationFrame(() => {
-      target.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-    });
-  }, []);
-
-  const handleMagneticLeave = useCallback((e: React.MouseEvent<HTMLElement>) => {
-    const target = e.currentTarget;
-    requestAnimationFrame(() => {
-      target.style.transform = 'translate(0, 0)';
-    });
-  }, []);
-
   useEffect(() => {
-    // Simulate loading
     setTimeout(() => setIsLoading(false), 1500);
 
-    // Handle scroll progress
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (window.scrollY / totalScroll) * 100;
       setScrollProgress(progress);
 
-      // Update active section
-      const sections = ['home', 'about', 'projects', 'contact'];
+      const sections = ['home', 'about', 'experience', 'achievements', 'certificates', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -65,7 +41,6 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Theme toggling
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -94,10 +69,10 @@ function App() {
       <nav className="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-40 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <a href="#home" className="text-2xl font-bold text-indigo-600 link-hover">Abhinav K</a>
+            <a href="#home" className="text-2xl font-bold text-indigo-600 link-hover">JD</a>
             <div className="flex items-center gap-8">
               <div className="hidden md:flex gap-6">
-                {['home', 'about', 'projects', 'contact'].map((section) => (
+                {['home', 'about', 'experience', 'achievements', 'certificates', 'projects', 'contact'].map((section) => (
                   <a
                     key={section}
                     href={`#${section}`}
@@ -113,9 +88,7 @@ function App() {
               </div>
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors magnetic-button"
-                onMouseMove={handleMagneticMove}
-                onMouseLeave={handleMagneticLeave}
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
@@ -124,90 +97,212 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="min-h-screen relative flex items-center justify-center pt-16">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/90 to-purple-600/90 dark:from-indigo-900/90 dark:to-purple-900/90 mix-blend-multiply"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="relative z-10 text-center px-4">
-          <div className="space-y-6 opacity-0 animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 [text-shadow:_0_4px_12px_rgb(0_0_0_/_20%)] animate-float">
-              Abhinav K
+      {/* Home Section */}
+      <section id="home" className="min-h-screen flex items-center justify-center pt-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <div className="animate-slide-up">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              Hi, I'm <span className="text-indigo-600">John Doe</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
-              Web Developer
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+              Full Stack Developer & Cloud Solutions Architect
             </p>
-            <div className="flex justify-center space-x-6">
-              {[
-                { icon: Github, href: 'https://github.com/Abhinavsathyann' },
-                { icon: Linkedin, href: 'https://www.linkedin.com/in/abhinavksathyan/' },
-                { icon: Mail, href: 'mailto:abhinavksathyann@gmail.com' }
-              ].map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300 magnetic-button animate-glow"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                  onMouseMove={handleMagneticMove}
-                  onMouseLeave={handleMagneticLeave}
-                >
-                  <social.icon className="w-6 h-6 text-white" />
-                </a>
-              ))}
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a
+                href="#contact"
+                className="px-8 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+              >
+                Get in Touch
+              </a>
+              <a
+                href="#projects"
+                className="px-8 py-3 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+              >
+                View Projects
+              </a>
             </div>
           </div>
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ChevronDown className="w-8 h-8 text-white" />
+          <div className="mt-12 animate-bounce">
+            <a href="#about" className="inline-block">
+              <ChevronDown className="w-8 h-8 text-gray-400" />
+            </a>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-        <div className="max-w-4xl mx-auto">
+      <section id="about" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-2 justify-center mb-12">
-            <User     className="w-6 h-6 text-indigo-600" />
+            <User className="w-6 h-6 text-indigo-600" />
             <h2 className="text-3xl font-bold text-center">About Me</h2>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-slide-up">
               <img
-                src={abhinavPhoto}
+                src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&q=80"
                 alt="Profile"
-                className="relative w-48 h-48 rounded-full object-cover transform transition duration-500 group-hover:scale-105 animate-glow"
+                className="w-full h-[400px] object-cover rounded-lg shadow-lg"
               />
             </div>
-            <div className="flex-1 space-y-4">
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              "I am an aspiring web developer with a strong interest in building dynamic web applications.
-               Currently focusing on learning and developing with React, Node.js, and cloud technologies to enhance
-                my skills and deliver impactful solutions."
+            <div className="space-y-6 animate-slide-in-right">
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                With over 8 years of experience in software development, I specialize in building scalable web applications
+                and cloud solutions. My journey in tech has been driven by a passion for creating efficient, user-friendly
+                solutions that solve real-world problems.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {['React', 'Node.js', 'TypeScript', 'AWS', 'MongoDB', 'Docker'].map((skill) => (
-                  <div
-                    key={skill}
-                    className="px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 magnetic-button"
-                    onMouseMove={handleMagneticMove}
-                    onMouseLeave={handleMagneticLeave}
-                  >
-                    {skill}
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <h3 className="font-bold mb-2">Skills</h3>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>• React & Next.js</li>
+                    <li>• Node.js & Express</li>
+                    <li>• AWS & Cloud Architecture</li>
+                    <li>• TypeScript & JavaScript</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold mb-2">Interests</h3>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>• Open Source</li>
+                    <li>• Cloud Computing</li>
+                    <li>• System Design</li>
+                    <li>• Tech Mentoring</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                >
+                  <Github className="w-5 h-5" />
+                  GitHub
+                </a>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  LinkedIn
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Keep all existing sections: Experience, Achievements, Certificates, Projects, Contact */}
+      {/* Experience Section */}
+      <section id="experience" className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 justify-center mb-12">
+            <Briefcase className="w-6 h-6 text-indigo-600" />
+            <h2 className="text-3xl font-bold text-center">Work Experience</h2>
+          </div>
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-indigo-600 animate-slide-up"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="absolute left-0 top-0 w-2 h-2 bg-indigo-600 rounded-full transform -translate-x-[3px]" />
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex flex-wrap justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold">{exp.role}</h3>
+                      <p className="text-indigo-600">{exp.company}</p>
+                    </div>
+                    <span className="text-sm text-gray-500">{exp.period}</span>
+                  </div>
+                  <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                    {exp.achievements.map((achievement, i) => (
+                      <li key={i}>{achievement}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section id="achievements" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 justify-center mb-12">
+            <Trophy className="w-6 h-6 text-indigo-600" />
+            <h2 className="text-3xl font-bold text-center">Achievements</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {achievements.map((achievement, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-scale"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="text-indigo-600 mb-4">
+                  <achievement.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{achievement.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{achievement.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certificates Section */}
+      <section id="certificates" className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 justify-center mb-12">
+            <Award className="w-6 h-6 text-indigo-600" />
+            <h2 className="text-3xl font-bold text-center">Certificates</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {certificates.map((cert, index) => (
+              <div
+                key={index}
+                className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-right"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">{cert.title}</h3>
+                      <p className="text-indigo-600">{cert.issuer}</p>
+                    </div>
+                    <span className="text-sm text-gray-500">{cert.date}</span>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{cert.description}</p>
+                  {cert.link && (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-700 transition-colors"
+                    >
+                      View Certificate <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4">
+      <section id="projects" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-2 justify-center mb-12">
             <Code className="w-6 h-6 text-indigo-600" />
@@ -217,9 +312,8 @@ function App() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 magnetic-button"
-                onMouseMove={handleMagneticMove}
-                onMouseLeave={handleMagneticLeave}
+                className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-scale"
+                style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -244,7 +338,7 @@ function App() {
                   </div>
                   <a
                     href={project.link}
-                    className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-700 transition-colors link-hover"
+                    className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-700 transition-colors"
                   >
                     View Project <ExternalLink className="w-4 h-4" />
                   </a>
@@ -256,7 +350,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <section id="contact" className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center gap-2 justify-center mb-12">
             <Send className="w-6 h-6 text-indigo-600" />
@@ -269,21 +363,37 @@ function App() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:hello@example.com"
-              className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors group magnetic-button animate-glow"
-              onMouseMove={handleMagneticMove}
-              onMouseLeave={handleMagneticLeave}
+              className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors group animate-scale"
             >
               <Mail className="w-5 h-5 transform group-hover:scale-110 transition-transform" />
               Send Email
             </a>
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 bg-gray-800 dark:bg-white text-white dark:text-gray-800 px-8 py-3 rounded-lg hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors group magnetic-button animate-glow"
-              onMouseMove={handleMagneticMove}
-              onMouseLeave={handleMagneticLeave}
+              className="inline-flex items-center justify-center gap-2 bg-gray-800 dark:bg-white text-white dark:text-gray-800 px-8 py-3 rounded-lg hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors group animate-scale animate-delay-100"
             >
               <Briefcase className="w-5 h-5 transform group-hover:scale-110 transition-transform" />
               Download CV
+            </a>
+          </div>
+          <div className="mt-12 flex justify-center space-x-6">
+            <a
+              href="#"
+              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors animate-scale animate-delay-200"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href="#"
+              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors animate-scale animate-delay-300"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="mailto:hello@example.com"
+              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors animate-scale animate-delay-400"
+            >
+              <Mail className="w-6 h-6" />
             </a>
           </div>
         </div>
@@ -292,12 +402,114 @@ function App() {
       {/* Footer */}
       <footer className="py-8 bg-gray-900 text-gray-300">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p> 2025 Abhinav K. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} John Doe. All rights reserved.</p>
         </div>
       </footer>
     </div>
   );
 }
+
+// Keep all existing constants
+const experiences = [
+  {
+    role: "Senior Full Stack Developer",
+    company: "Tech Innovators Inc.",
+    period: "2020 - Present",
+    achievements: [
+      "Led a team of 5 developers in building a cloud-based SaaS platform",
+      "Improved system performance by 40% through optimization",
+      "Implemented CI/CD pipeline reducing deployment time by 60%"
+    ]
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Digital Solutions Ltd",
+    period: "2018 - 2020",
+    achievements: [
+      "Developed and maintained multiple client projects using React and Node.js",
+      "Reduced server costs by 30% through architecture optimization",
+      "Mentored 3 junior developers"
+    ]
+  },
+  {
+    role: "Frontend Developer",
+    company: "WebCraft Agency",
+    period: "2016 - 2018",
+    achievements: [
+      "Built responsive websites for 20+ clients",
+      "Implemented modern frontend practices improving load times by 50%",
+      "Received client satisfaction score of 4.9/5"
+    ]
+  }
+];
+
+const achievements = [
+  {
+    icon: Trophy,
+    title: "Best Developer Award 2023",
+    description: "Recognized for outstanding contributions to open source projects and technical innovation"
+  },
+  {
+    icon: Code,
+    title: "1M+ Lines of Code",
+    description: "Contributed over a million lines of code to various projects and platforms"
+  },
+  {
+    icon: GraduationCap,
+    title: "Technical Mentor",
+    description: "Mentored 50+ developers, conducting workshops and training sessions"
+  },
+  {
+    icon: Award,
+    title: "Innovation Champion",
+    description: "Led the development of 3 patent-pending technologies"
+  },
+  {
+    icon: Github,
+    title: "Open Source Contributor",
+    description: "Major contributor to popular open source projects with 1000+ stars"
+  },
+  {
+    icon: Trophy,
+    title: "Hackathon Winner",
+    description: "Won first place in 3 major hackathons for innovative solutions"
+  }
+];
+
+const certificates = [
+  {
+    title: "AWS Solutions Architect Professional",
+    issuer: "Amazon Web Services",
+    date: "2023",
+    description: "Advanced certification for designing distributed systems on AWS",
+    image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80",
+    link: "#"
+  },
+  {
+    title: "Google Cloud Professional Developer",
+    issuer: "Google",
+    date: "2022",
+    description: "Expert-level certification for cloud application development",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
+    link: "#"
+  },
+  {
+    title: "Microsoft Azure Expert",
+    issuer: "Microsoft",
+    date: "2022",
+    description: "Advanced certification for Azure cloud solutions",
+    image: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80",
+    link: "#"
+  },
+  {
+    title: "Advanced React Development",
+    issuer: "Meta",
+    date: "2021",
+    description: "Specialized certification in advanced React patterns and practices",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80",
+    link: "#"
+  }
+];
 
 const projects = [
   {
