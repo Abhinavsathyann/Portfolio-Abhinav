@@ -112,7 +112,7 @@ function App() {
                 href="#contact"
                 className="px-8 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
               >
-                Get in Touch
+                Get in Touch !
               </a>
               <a
                 href="#projects"
