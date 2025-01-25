@@ -382,19 +382,19 @@ function App() {
           </div>
           <div className="mt-12 flex justify-center space-x-6">
             <a
-              href="#"
+              href="https://github.com/Abhinavsathyann"
               className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors animate-scale animate-delay-200"
             >
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/abhinavksathyann/"
               className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors animate-scale animate-delay-300"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:Abhinavksathyann@gmail.com"
               className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors animate-scale animate-delay-400"
             >
               <Mail className="w-6 h-6" />
