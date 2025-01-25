@@ -155,32 +155,36 @@ function App() {
                 <div>
                   <h3 className="font-bold mb-2">Skills</h3>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                    <li>• React & Next.js</li>
-                    <li>• Node.js & Express</li>
-                    <li>• AWS & Cloud Architecture</li>
+                    <li>• Tailwind css & Bootstrap</li>
                     <li>• TypeScript & JavaScript</li>
+                    <li>• Python & Django</li>
+                    <li>• React & Next.js</li>
+                    <li>• Php & Laravel</li>
+                    <li>• Java & Sql</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-bold mb-2">Interests</h3>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                    <li>• Open Source</li>
-                    <li>• Cloud Computing</li>
-                    <li>• System Design</li>
-                    <li>• Tech Mentoring</li>
+                    <li>• UI/UX Design & Prototyping</li>
+                    <li>• Open Source Contributions</li>
+                    <li>• Mobile App Development</li>
+                    <li>• AI & Machine Learning</li>
+                    <li>• Web Development</li>
+                    <li>• Cyber Security</li>
                   </ul>
                 </div>
               </div>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://github.com/Abhinavsathyann"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
                 >
                   <Github className="w-5 h-5" />
                   GitHub
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/abhinavksathyan/"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -362,7 +366,7 @@ function App() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:hello@example.com"
+              href="mailto:Abhinavksathyann@gmail.com"
               className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors group animate-scale"
             >
               <Mail className="w-5 h-5 transform group-hover:scale-110 transition-transform" />
@@ -402,7 +406,7 @@ function App() {
       {/* Footer */}
       <footer className="py-8 bg-gray-900 text-gray-300">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>© {new Date().getFullYear()} John Doe. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Abhinav. All rights reserved.</p>
         </div>
       </footer>
     </div>
